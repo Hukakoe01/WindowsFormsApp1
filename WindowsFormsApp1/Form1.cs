@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string apiKey = "AQ7WdO9YzqlEbMpFkZttjm6aypq0obavloba";
+            string apiKey = "";
             string endpoint = $"https://currencyapi.net/api/v1/rates?key={apiKey}&output=JSON";
 
             try
