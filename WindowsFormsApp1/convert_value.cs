@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 
-namespace WindowsFormsApp1
+namespace Program_for_value
 {
-    public partial class Form1 : Form
+    public partial class convert_value : Form
     {
         //загрузка формы
-        public Form1()
+        public convert_value()
         {
             InitializeComponent();
-            toolStripTextBox2.Text = "";
-            toolStripTextBox3.Text = "";
+            value_in.Text = "";
+            value_out.Text = "";
 
             // Инициализация базы данных
             using (var context = new ApplicationDbContext())
@@ -48,8 +48,8 @@ namespace WindowsFormsApp1
             try
             {
                 //проверка на наличие введённых валют в поля для ввода своих валют
-                if (!string.IsNullOrEmpty(toolStripTextBox2.Text)) { first_value_from_api = toolStripTextBox2.Text; }
-                if (!string.IsNullOrEmpty(toolStripTextBox3.Text)) { second_value_from_api = toolStripTextBox3.Text; }
+                if (!string.IsNullOrEmpty(value_in.Text)) { first_value_from_api = value_in.Text; }
+                if (!string.IsNullOrEmpty(value_out.Text)) { second_value_from_api = value_out.Text; }
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
 
                         if (data != null && data.Rates.ContainsKey(first_value_from_api) && data.Rates.ContainsKey(second_value_from_api))
                         {
-                            if (float.TryParse(toolStripTextBox1.Text, out float parametr))
+                            if (float.TryParse(how_much_value.Text, out float parametr))
                             {
                                 //получение ценового эквивалента валюты
                                 float val1 = (float)data.Rates[first_value_from_api];
@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
                                 float itog = parametr / val1 * val2;
                                 DateTime currentTime = DateTime.Now;
                                 //вывод сообщения в поле 
-                                richTextBox1.Text += $"\n{currentTime}\nКурс {first_value_from_api} к {second_value_from_api}: {parametr} {first_value_from_api} = {itog} {second_value_from_api}";
+                                window_for_user_output.Text += $"\n{currentTime}\nКурс {first_value_from_api} к {second_value_from_api}: {parametr} {first_value_from_api} = {itog} {second_value_from_api}";
 
                                 using (var context = new ApplicationDbContext())
                                 {
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
                             }
                             else
                             {
-                                MessageBox.Show("error: input true integer value in toolStripTextBox1.");
+                                MessageBox.Show("error: input true integer value in how_much_value.");
                             }
                         }
                         else
@@ -137,50 +137,48 @@ namespace WindowsFormsApp1
             }
         }
         //дальше идёт много команд отвечающих за выбор валюты перевода откуда и куда
-        private void рубльToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RUBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             first_value_from_api = "RUB";
         }
 
-        private void долорToolStripMenuItem_Click(object sender, EventArgs e)
+        private void USDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             first_value_from_api = "USD";
         }
 
-        private void евроToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EURToolStripMenuItem_Click(object sender, EventArgs e)
         {
             first_value_from_api = "EUR";
         }
 
-        private void белорусскийРубльToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             first_value_from_api = "EOS";
         }
 
-        private void рубльToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void RUBToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             second_value_from_api = "RUB";
         }
 
-        private void долорToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void USDToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             second_value_from_api = "USD";
         }
 
-        private void евроToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void EURToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             second_value_from_api = "EUR";
         }
 
-        private void белоруссToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EOSToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             second_value_from_api = "EOS";
         }
         /// <summary>
         /// данная команда отвечает за вывод информации по актуальной дате
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             //выбор даты
@@ -192,13 +190,13 @@ namespace WindowsFormsApp1
                                              .Where(q => q.DateTime.Date == selectedDate.Date)
                                              .ToList();
                 //удаление старого содержания
-                richTextBox2.Clear();
+                window_for_output_by_date.Clear();
                 foreach (var query in queries)
                 {
                     foreach (var result in query.QueryResults)
                     {
                         //вывод курса валют по актуальной дате
-                        richTextBox2.AppendText($"{result.DateTime}\n" +
+                        window_for_output_by_date.AppendText($"{result.DateTime}\n" +
                                                 $" {query.ValueFrom} : {result.Value1}\n" +
                                                 $" {query.ValueTo} : {result.Value2}\n\n");
                     }
@@ -219,7 +217,7 @@ namespace WindowsFormsApp1
                                        .ThenInclude(q => q.QueryResults)
                                        .FirstOrDefault(u => u.Name == textBox1.Text);
 
-                    richTextBox1.Clear();
+                    window_for_user_output.Clear();
                     if (user != null)
                     {
                         // Цикл по всем запросам пользователя
@@ -228,8 +226,8 @@ namespace WindowsFormsApp1
                             // Цикл по всем результатам каждого запроса
                             foreach (var result in query.QueryResults)
                             {
-                                richTextBox1.AppendText($"ValueFrom: {query.ValueFrom}, ValueTo: {query.ValueTo}, ValueToConvert: {query.ValueToConvert}\n");
-                                richTextBox1.AppendText($"DateTime: {result.DateTime}, Itogo: {result.Itogo}\n\n");
+                                window_for_user_output.AppendText($"ValueFrom: {query.ValueFrom}, ValueTo: {query.ValueTo}, ValueToConvert: {query.ValueToConvert}\n");
+                                window_for_user_output.AppendText($"DateTime: {result.DateTime}, Itogo: {result.Itogo}\n\n");
                             }
                         }
                     }

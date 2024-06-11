@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WindowsFormsApp1.Migrations
+namespace Program_for_value.Migrations
 {
     public partial class textBox1Text : Migration
     {

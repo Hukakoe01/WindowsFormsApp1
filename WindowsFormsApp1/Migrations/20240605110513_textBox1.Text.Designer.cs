@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WindowsFormsApp1;
+using Program_for_value;
 
-namespace WindowsFormsApp1.Migrations
+namespace Program_for_value.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240605110513_textBox1.Text")]
@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.10");
 
-            modelBuilder.Entity("WindowsFormsApp1.Query", b =>
+            modelBuilder.Entity("Program_for_value.Query", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.Migrations
                     b.ToTable("Queries");
                 });
 
-            modelBuilder.Entity("WindowsFormsApp1.QueryResult", b =>
+            modelBuilder.Entity("Program_for_value.QueryResult", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.Migrations
                     b.ToTable("QueryResults");
                 });
 
-            modelBuilder.Entity("WindowsFormsApp1.User", b =>
+            modelBuilder.Entity("Program_for_value.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,18 +88,18 @@ namespace WindowsFormsApp1.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WindowsFormsApp1.Query", b =>
+            modelBuilder.Entity("Program_for_value.Query", b =>
                 {
-                    b.HasOne("WindowsFormsApp1.User", "User")
+                    b.HasOne("Program_for_value.User", "User")
                         .WithMany("Queries")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WindowsFormsApp1.QueryResult", b =>
+            modelBuilder.Entity("Program_for_value.QueryResult", b =>
                 {
-                    b.HasOne("WindowsFormsApp1.Query", "Query")
+                    b.HasOne("Program_for_value.Query", "Query")
                         .WithMany("QueryResults")
                         .HasForeignKey("QueryId")
                         .OnDelete(DeleteBehavior.Cascade)
