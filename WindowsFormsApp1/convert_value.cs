@@ -136,46 +136,7 @@ namespace Program_for_value
                 MessageBox.Show("General error: " + ex.Message);
             }
         }
-        //дальше идёт много команд отвечающих за выбор валюты перевода откуда и куда
-        private void RUBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            first_value_from_api = "RUB";
-        }
-
-        private void USDToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            first_value_from_api = "USD";
-        }
-
-        private void EURToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            first_value_from_api = "EUR";
-        }
-
-        private void EOSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            first_value_from_api = "EOS";
-        }
-
-        private void RUBToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            second_value_from_api = "RUB";
-        }
-
-        private void USDToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            second_value_from_api = "USD";
-        }
-
-        private void EURToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            second_value_from_api = "EUR";
-        }
-
-        private void EOSToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            second_value_from_api = "EOS";
-        }
+        
         /// <summary>
         /// данная команда отвечает за вывод информации по актуальной дате
         /// </summary>

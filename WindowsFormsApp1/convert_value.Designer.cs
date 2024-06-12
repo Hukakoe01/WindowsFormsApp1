@@ -25,22 +25,6 @@
             this.box_for_in_value = new System.Windows.Forms.ComboBox();
             this.box_for_out_value = new System.Windows.Forms.ComboBox();
             this.box_much_value = new System.Windows.Forms.TextBox();
-            this.вашаВалютаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.рубльToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.долорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.евроToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.белорусскийРубльToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.value_in = new System.Windows.Forms.ToolStripTextBox();
-            this.сколькоУВасВалютыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.how_much_value = new System.Windows.Forms.ToolStripTextBox();
-            this.вКакуюПеревестиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.рубльToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.долорToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.евроToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.белоруссToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.value_out = new System.Windows.Forms.ToolStripTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -116,124 +100,7 @@
             this.box_much_value.Name = "box_much_value";
             this.box_much_value.Size = new System.Drawing.Size(100, 20);
             this.box_much_value.TabIndex = 9;
-            // 
-            // вашаВалютаToolStripMenuItem
-            // 
-            this.вашаВалютаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.рубльToolStripMenuItem,
-            this.долорToolStripMenuItem,
-            this.евроToolStripMenuItem,
-            this.белорусскийРубльToolStripMenuItem,
-            this.value_in});
-            this.вашаВалютаToolStripMenuItem.Name = "вашаВалютаToolStripMenuItem";
-            this.вашаВалютаToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
-            this.вашаВалютаToolStripMenuItem.Text = "ваша валюта";
-            // 
-            // рубльToolStripMenuItem
-            // 
-            this.рубльToolStripMenuItem.Name = "рубльToolStripMenuItem";
-            this.рубльToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.рубльToolStripMenuItem.Text = "рубль";
-            this.рубльToolStripMenuItem.Click += new System.EventHandler(this.RUBToolStripMenuItem_Click);
-            // 
-            // долорToolStripMenuItem
-            // 
-            this.долорToolStripMenuItem.Name = "долорToolStripMenuItem";
-            this.долорToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.долорToolStripMenuItem.Text = "долор";
-            this.долорToolStripMenuItem.Click += new System.EventHandler(this.USDToolStripMenuItem_Click);
-            // 
-            // евроToolStripMenuItem
-            // 
-            this.евроToolStripMenuItem.Name = "евроToolStripMenuItem";
-            this.евроToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.евроToolStripMenuItem.Text = "евро";
-            this.евроToolStripMenuItem.Click += new System.EventHandler(this.EURToolStripMenuItem_Click);
-            // 
-            // белорусскийРубльToolStripMenuItem
-            // 
-            this.белорусскийРубльToolStripMenuItem.Name = "белорусскийРубльToolStripMenuItem";
-            this.белорусскийРубльToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.белорусскийРубльToolStripMenuItem.Text = "крипта";
-            this.белорусскийРубльToolStripMenuItem.Click += new System.EventHandler(this.EOSToolStripMenuItem_Click);
-            // 
-            // value_in
-            // 
-            this.value_in.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.value_in.Name = "value_in";
-            this.value_in.Size = new System.Drawing.Size(100, 23);
-            // 
-            // сколькоУВасВалютыToolStripMenuItem
-            // 
-            this.сколькоУВасВалютыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.how_much_value});
-            this.сколькоУВасВалютыToolStripMenuItem.Name = "сколькоУВасВалютыToolStripMenuItem";
-            this.сколькоУВасВалютыToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
-            this.сколькоУВасВалютыToolStripMenuItem.Text = "сколько у вас валюты";
-            // 
-            // how_much_value
-            // 
-            this.how_much_value.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.how_much_value.Name = "how_much_value";
-            this.how_much_value.Size = new System.Drawing.Size(100, 23);
-            // 
-            // вКакуюПеревестиToolStripMenuItem
-            // 
-            this.вКакуюПеревестиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.рубльToolStripMenuItem1,
-            this.долорToolStripMenuItem1,
-            this.евроToolStripMenuItem1,
-            this.белоруссToolStripMenuItem,
-            this.value_out});
-            this.вКакуюПеревестиToolStripMenuItem.Name = "вКакуюПеревестиToolStripMenuItem";
-            this.вКакуюПеревестиToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
-            this.вКакуюПеревестиToolStripMenuItem.Text = "в какую перевести";
-            // 
-            // рубльToolStripMenuItem1
-            // 
-            this.рубльToolStripMenuItem1.Name = "рубльToolStripMenuItem1";
-            this.рубльToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
-            this.рубльToolStripMenuItem1.Text = "рубль";
-            this.рубльToolStripMenuItem1.Click += new System.EventHandler(this.RUBToolStripMenuItem1_Click);
-            // 
-            // долорToolStripMenuItem1
-            // 
-            this.долорToolStripMenuItem1.Name = "долорToolStripMenuItem1";
-            this.долорToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
-            this.долорToolStripMenuItem1.Text = "долор";
-            this.долорToolStripMenuItem1.Click += new System.EventHandler(this.USDToolStripMenuItem1_Click);
-            // 
-            // евроToolStripMenuItem1
-            // 
-            this.евроToolStripMenuItem1.Name = "евроToolStripMenuItem1";
-            this.евроToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
-            this.евроToolStripMenuItem1.Text = "евро";
-            this.евроToolStripMenuItem1.Click += new System.EventHandler(this.EURToolStripMenuItem1_Click);
-            // 
-            // белоруссToolStripMenuItem
-            // 
-            this.белоруссToolStripMenuItem.Name = "белоруссToolStripMenuItem";
-            this.белоруссToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.белоруссToolStripMenuItem.Text = "крипта";
-            this.белоруссToolStripMenuItem.Click += new System.EventHandler(this.EOSToolStripMenuItem1_Click);
-            // 
-            // value_out
-            // 
-            this.value_out.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.value_out.Name = "value_out";
-            this.value_out.Size = new System.Drawing.Size(100, 23);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вашаВалютаToolStripMenuItem,
-            this.сколькоУВасВалютыToolStripMenuItem,
-            this.вКакуюПеревестиToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            
             // 
             // convert_value
             // 
@@ -248,13 +115,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.window_for_user_output);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "convert_value";
             this.Text = "convert_value";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,20 +133,5 @@
         private System.Windows.Forms.ComboBox box_for_in_value;
         private System.Windows.Forms.ComboBox box_for_out_value;
         private System.Windows.Forms.TextBox box_much_value;
-        private System.Windows.Forms.ToolStripMenuItem вашаВалютаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem рубльToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem долорToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem евроToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem белорусскийРубльToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox value_in;
-        private System.Windows.Forms.ToolStripMenuItem сколькоУВасВалютыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox how_much_value;
-        private System.Windows.Forms.ToolStripMenuItem вКакуюПеревестиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem рубльToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem долорToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem евроToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem белоруссToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox value_out;
-        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
