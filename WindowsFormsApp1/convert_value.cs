@@ -14,8 +14,6 @@ namespace Program_for_value
         public convert_value()
         {
             InitializeComponent();
-            value_in.Text = "";
-            value_out.Text = "";
 
             // Инициализация базы данных
             using (var context = new ApplicationDbContext())
@@ -48,8 +46,10 @@ namespace Program_for_value
             try
             {
                 //проверка на наличие введённых валют в поля для ввода своих валют
-                if (!string.IsNullOrEmpty(value_in.Text)) { first_value_from_api = value_in.Text; }
-                if (!string.IsNullOrEmpty(value_out.Text)) { second_value_from_api = value_out.Text; }
+                if (box_for_in_value.Text != "ваша валюта") { first_value_from_api = box_for_in_value.Text; }
+                else { MessageBox.Show("выберите валюту"); }
+                if (box_for_out_value.Text != "в какую переводить") { second_value_from_api = box_for_out_value.Text; }
+                else { MessageBox.Show("выберите валюту"); }
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -63,7 +63,7 @@ namespace Program_for_value
 
                         if (data != null && data.Rates.ContainsKey(first_value_from_api) && data.Rates.ContainsKey(second_value_from_api))
                         {
-                            if (float.TryParse(how_much_value.Text, out float parametr))
+                            if (float.TryParse(box_much_value.Text, out float parametr))
                             {
                                 //получение ценового эквивалента валюты
                                 float val1 = (float)data.Rates[first_value_from_api];
