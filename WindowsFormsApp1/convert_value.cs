@@ -148,6 +148,7 @@ namespace Program_for_value
             {
                 //выбор потходящих данных по актуальной дате
                 var queries = context.Queries.Include(q => q.QueryResults)
+                                                .Include(q => q.User)
                                              .Where(q => q.DateTime.Date == selectedDate.Date)
                                              .ToList();
                 //удаление старого содержания
@@ -158,6 +159,7 @@ namespace Program_for_value
                     {
                         //вывод курса валют по актуальной дате
                         window_for_output_by_date.AppendText($"{result.DateTime}\n" +
+                                                     $"{query.User.Name}\n" +
                                                 $" {query.ValueFrom} : {result.Value1}\n" +
                                                 $" {query.ValueTo} : {result.Value2}\n\n");
                     }
