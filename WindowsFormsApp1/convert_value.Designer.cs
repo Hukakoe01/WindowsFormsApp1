@@ -29,7 +29,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(396, 123);
+            this.button1.Location = new System.Drawing.Point(394, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -39,15 +39,15 @@
             // 
             // window_for_user_output
             // 
-            this.window_for_user_output.Location = new System.Drawing.Point(34, 88);
+            this.window_for_user_output.Location = new System.Drawing.Point(34, 106);
             this.window_for_user_output.Name = "window_for_user_output";
-            this.window_for_user_output.Size = new System.Drawing.Size(347, 163);
+            this.window_for_user_output.Size = new System.Drawing.Size(354, 163);
             this.window_for_user_output.TabIndex = 3;
             this.window_for_user_output.Text = "";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 88);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
@@ -55,16 +55,16 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(508, 88);
+            this.monthCalendar1.Location = new System.Drawing.Point(508, 58);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // window_for_output_by_date
             // 
-            this.window_for_output_by_date.Location = new System.Drawing.Point(685, 88);
+            this.window_for_output_by_date.Location = new System.Drawing.Point(684, 61);
             this.window_for_output_by_date.Name = "window_for_output_by_date";
-            this.window_for_output_by_date.Size = new System.Drawing.Size(250, 163);
+            this.window_for_output_by_date.Size = new System.Drawing.Size(272, 163);
             this.window_for_output_by_date.TabIndex = 6;
             this.window_for_output_by_date.Text = "";
             // 
@@ -75,7 +75,7 @@
             "RUB",
             "USD",
             "EUR"});
-            this.box_for_in_value.Location = new System.Drawing.Point(34, 28);
+            this.box_for_in_value.Location = new System.Drawing.Point(34, 61);
             this.box_for_in_value.Name = "box_for_in_value";
             this.box_for_in_value.Size = new System.Drawing.Size(121, 21);
             this.box_for_in_value.TabIndex = 7;
@@ -88,7 +88,7 @@
             "RUB",
             "USD",
             "EUR"});
-            this.box_for_out_value.Location = new System.Drawing.Point(267, 28);
+            this.box_for_out_value.Location = new System.Drawing.Point(267, 60);
             this.box_for_out_value.Name = "box_for_out_value";
             this.box_for_out_value.Size = new System.Drawing.Size(121, 21);
             this.box_for_out_value.TabIndex = 8;
@@ -96,17 +96,16 @@
             // 
             // box_much_value
             // 
-            this.box_much_value.Location = new System.Drawing.Point(161, 28);
+            this.box_much_value.Location = new System.Drawing.Point(161, 61);
             this.box_much_value.Name = "box_much_value";
             this.box_much_value.Size = new System.Drawing.Size(100, 20);
             this.box_much_value.TabIndex = 9;
-            
             // 
             // convert_value
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 369);
+            this.ClientSize = new System.Drawing.Size(968, 342);
             this.Controls.Add(this.box_much_value);
             this.Controls.Add(this.box_for_out_value);
             this.Controls.Add(this.box_for_in_value);

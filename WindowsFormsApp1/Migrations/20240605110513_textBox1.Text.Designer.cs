@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Program_for_value;
+using WindowsFormsApp1.bd;
 
 namespace Program_for_value.Migrations
 {
